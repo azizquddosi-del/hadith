@@ -35,3 +35,4 @@ page("index.html",N,"Hadith of Prophet Muhammad ﷺ in Arabic, Pashto and Englis
 open(O+"/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+"".join(f"<url><loc>{B}/{u}</loc></url>" for u in urls)+"</urlset>")
 open(O+"/robots.txt","w").write(f"User-agent: *\nAllow: /\nSitemap: {B}/sitemap.xml\n")
 print("built",len(D),"hadiths")
+import glob; [shutil.copy(f,O) for f in glob.glob("google*.html")] 
